@@ -1,0 +1,68 @@
+@charset "UTF-8";
+* {
+  font-family: "Ubuntu", 微軟正黑體;
+  position: relative;
+  color: #999898;
+}
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.all {
+  max-width: 800px;
+  box-sizing: border-box;
+}
+.all .dreamlist {
+  width: 600px;
+  display: inline-block;
+  padding: 20px;
+}
+.all .dreamlist h1 {
+  display: inline-block;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-top: -20px;
+  margin-left: 0px;
+  margin-right: -20px;
+  background-color: #F7DBDF;
+  color: #F3ABA6;
+  font-weight: 500;
+}
+.all .dreamlist ul {
+  padding: 0;
+}
+.all .dreamlist ul li {
+  display: inline-block;
+  width: 45%;
+  height: 150px;
+  padding: 5px 0px 0px 10px;
+  font-size: 20px;
+}
+.all .dreamlist ul li img {
+  display: block;
+  padding: 10px;
+  position: relative;
+  width: 114px;
+  height: 114px;
+}
+.all .dreamlist #items_list {
+  margin-top: 10px;
+  padding: 5px;
+}
+.all .dreamlist .buy_item {
+  font-weight: 800;
+  padding-left: 8px;
+  padding: 3px;
+  list-style: none;
+  border: solid 3px;
+  margin-top: 10px;
+  font-weight: 800;
+}
