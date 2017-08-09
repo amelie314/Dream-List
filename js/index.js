@@ -1,3 +1,4 @@
+
 //新增一個商品清單的物件
 var items = [
   {name: " Surfboard ",price: 3000,number: 0},
@@ -9,19 +10,14 @@ var items = [
 ];
 
 //定義元素用的html模板，{{名稱}}代表要套入的地方
-var htmlList = "<li>{{name}}<div class='price'>${{price}}</div><button class='minus' id='{{minusID}}'>－</button><div class='num'>{{number}}</div><button class='pulse' id='{{pulseID}}'>＋</button><button class='del' id='{{delID}}'>✖</button></li>"
+var htmlList = "<li>{{name}}<div class='price'>${{price}}</div><button class='minus' id='{{minusID}}'>－</button><div class='num'>{{number}}</div><button class='puls' id='{{pulsID}}'>＋</button><button class='del' id='{{delID}}'>✖</button></li>"
 
-var htmlTotal = "<li class='total'><span class=total-title>TOTAL</span><div class='price'><span class=total-title>${{totalPrice}}</span></div><button id='order'>Order it!</button></li>"
+var htmlTotal = "<li class='total'><span class=total-title>TOTAL</span><div class='price'><span class=total-title>${{totalPrice}}</span></div></li>"
 
-var htmlList = "<li>{{name}}<div class='price'>${{price}}</div><button class='minus' id='{{minusID}}'>－</button><div class='num'>{{number}}</div><button class='pulse' id='{{pulseID}}'>＋</button><button class='del' id='{{delID}}'>✖</button></li>"
-
-var htmlTotal = "<li class='total'><span class=total-title>TOTAL</span><div class='price'><span class=total-title>${{totalPrice}}</span></div><button id='order'>Order it!</button></li>"
 
 var totalPrice = 0;
 
 function showlist() {
-
-  //clean out
   $("#list").html("");
   var totalPrice = 0;
 
@@ -31,38 +27,19 @@ function showlist() {
       .replace("{{name}}", items[i].name)
       .replace("{{number}}", items[i].number)
       .replace("{{delID}}", "del" + i)
-      .replace("{{pulseID}}", "pulse" + i)
+      .replace("{{pulsID}}", "puls" + i)
       .replace("{{minusID}}", "minus" + i);
     
     if (items[i].number > 0) {
       $("#list").append(replaceHtmlList);
     }
     
-
-
     totalPrice += parseInt(items[i].price) * parseInt(items[i].number);
     var replaceHtmlTotal = htmlTotal
       .replace("{{totalPrice}}", totalPrice);
   }
-  
-  if(totalPrice>1000){
-    $("#message").css("opacity","1");
-    showlist();
-  }
 
   $("#list").append(replaceHtmlTotal);
-  
-  $("#order").click(
-      function(){
-        $(".tks").fadeIn();
-        //random order number
-        var orderNumber=Math.floor((Math.random() * 100) + 1);
-        $(".number-area").text(orderNumber);
-      }
-    );
-  
-
-  
   
   //minus
   for(m=0;m<6;m++){
@@ -78,17 +55,17 @@ function showlist() {
     tempMinus(m);
   }
   
-  //pulse
+  //puls
   for(p=0;p<6;p++){
-    var tempPulse = function(tempP){
-      $("#pulse"+tempP).click(
+    var tempPuls = function(tempP){
+      $("#puls"+tempP).click(
         function(){
           items[tempP].number++;
           showlist();
         }
       );
     }
-    tempPulse(p);
+    tempPuls(p);
   }
   
   //delete
@@ -122,5 +99,3 @@ for (j = 0; j < 6; j++) {
   }
   tempFunction(j);
 }
-
- //tks pop up

@@ -17,24 +17,46 @@ html, body {
 }
 
 .all {
-  max-width: 800px;
+  max-width: 600px;
   box-sizing: border-box;
 }
 .all .dreamlist {
-  width: 600px;
   display: inline-block;
   padding: 20px;
+  width: 600px;
 }
 .all .dreamlist h1 {
   display: inline-block;
   border-radius: 10px;
   padding: 10px 20px;
-  margin-top: -20px;
+  margin-top: 20px;
   margin-left: 0px;
   margin-right: -20px;
-  background-color: #F7DBDF;
-  color: #F3ABA6;
+  background-color: rgba(241, 148, 131, 0.2);
+  color: #f19483;
   font-weight: 500;
+}
+.all .dreamlist button {
+  width: 100px;
+  height: 30px;
+  font-size: 15px;
+  background-color: #fff;
+  color: #f19483;
+  position: relative;
+  bottom: 50px;
+  left: 150px;
+  border: 0.5px dashed;
+  transition-duration: 0.5s;
+}
+.all .dreamlist button:hover {
+  opacity: 0.7;
+  background-color: #f19483;
+  color: #ffffff;
+}
+.all .dreamlist button:active {
+  opacity: 1;
+  background-color: #ec6c55;
+  border-color: #ec6c55;
 }
 .all .dreamlist ul {
   padding: 0;
@@ -53,16 +75,91 @@ html, body {
   width: 114px;
   height: 114px;
 }
-.all .dreamlist #items_list {
-  margin-top: 10px;
-  padding: 5px;
+.all .finished {
+  width: 450px;
+  display: inline-block;
+  padding: 20px;
 }
-.all .dreamlist .buy_item {
-  font-weight: 800;
-  padding-left: 8px;
-  padding: 3px;
+.all .finished h1 {
+  display: inline-block;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  margin-left: 0px;
+  background-color: rgba(241, 148, 131, 0.2);
+  color: #f19483;
+  font-weight: 500;
+}
+.all .finished li {
+  font-size: 20px;
   list-style: none;
-  border: solid 3px;
-  margin-top: 10px;
-  font-weight: 800;
+  padding: 10px;
+  background-color: #ffffff;
+  position: relative;
+  font-weight: 400;
+  border-bottom: 2px dashed #999898;
+}
+.all .finished li .del {
+  position: absolute;
+  right: 10px;
+  font-size: 15px;
+  color: #f19483;
+  background-color: #ffffff;
+  transition-duration: 0.5s;
+  border: none;
+}
+.all .finished li .del:hover {
+  background-color: #f19483;
+  color: #ffffff;
+}
+.all .finished li .del:active {
+  background-color: #f19483;
+}
+.all .finished li .puls {
+  position: absolute;
+  right: 80px;
+  border-style: none;
+  transition-duration: 0.5s;
+  border-radius: 100%;
+  font-size: 15px;
+  top: 8px;
+  background-color: rgba(241, 148, 131, 0.2);
+  color: #f19483;
+  font-weight: 900;
+}
+.all .finished li .puls:hover {
+  background-color: #f19483;
+  color: #ffffff;
+}
+.all .finished li .puls:active {
+  background-color: #e9593e;
+}
+.all .finished li .num {
+  position: absolute;
+  right: 120px;
+  top: 8px;
+}
+.all .finished li .minus {
+  position: absolute;
+  right: 145px;
+  border-style: none;
+  transition-duration: 0.5s;
+  border-radius: 100%;
+  font-size: 15px;
+  top: 8px;
+  background-color: rgba(241, 148, 131, 0.2);
+  color: #f19483;
+  font-weight: 900;
+}
+.all .finished li .minus:hover {
+  background-color: #f19483;
+  color: #ffffff;
+}
+.all .finished li .minus:active {
+  background-color: #e9593e;
+}
+.all .finished li .price {
+  position: absolute;
+  right: 200px;
+  top: 8px;
 }
